@@ -1,0 +1,55 @@
+<!-- result.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            padding-top: 50px;
+        }
+        h1 {
+            color: #333;
+        }
+        #result-container {
+            width: 45%;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        img {
+            max-width: 400px; /* Set the maximum width of the image */
+            max-height: 300px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .result {
+            font-size: 24px;
+            margin-top: 20px;
+            color: green; /* Default color for result */
+        }
+        .result.malignant {
+            color: red; /* Red color for malignant result */
+        }
+        .result.benign {
+            color: blue; /* Blue color for benign result */
+        }
+    </style>
+</head>
+<body>
+    <h1>Lukemiya Cancer Detection Results</h1>
+    <div id="result-container">
+        <img src="{{ image }}" alt="Uploaded Image"><br>
+        <h2>Result : <span class="result {{ result.lower() }}">{{ result }}</span></h2>
+    </div>
+</body>
+</html>
